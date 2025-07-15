@@ -1,0 +1,53 @@
+name: washmoose
+description: "WashMoose - Skip the car wash queue! Get professional car cleaning at your home or office. Fast, reliable, and budget-friendly."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Core UI
+  cupertino_icons: ^1.0.8
+  provider: ^6.1.1
+
+  # Firebase
+  firebase_core: ^3.8.0
+  firebase_auth: ^5.3.3
+  cloud_firestore: ^5.5.0
+  firebase_storage: ^12.4.6
+  firebase_messaging: ^15.0.0
+
+  # Utilities
+  shared_preferences: ^2.2.2
+  intl: ^0.18.1
+  image_picker: ^1.0.0
+  http: ^1.1.0
+  url_launcher: ^6.2.4
+  package_info_plus: ^4.2.0
+
+  # Charts
+  fl_chart: ^0.68.0
+
+  # Payment Processing
+  flutter_paypal_payment: ^1.0.6
+  flutter_stripe: ^10.1.1
+
+  # Audio (for notification sounds)
+  audioplayers: ^5.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Assets properly configured
+  assets:
+    - assets/images/

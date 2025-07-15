@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- WashMoose Network Security Configuration - SIMPLIFIED FOR PUBLISHING -->
+<network-security-config>
+    
+    <!-- ✅ PRODUCTION DOMAIN SECURITY -->
+    <domain-config cleartextTrafficPermitted="false">
+        <!-- Stripe API Security -->
+        <domain includeSubdomains="true">api.stripe.com</domain>
+        <domain includeSubdomains="true">js.stripe.com</domain>
+        <domain includeSubdomains="true">hooks.stripe.com</domain>
+        
+        <!-- Firebase Security -->
+        <domain includeSubdomains="true">firebaseapp.com</domain>
+        <domain includeSubdomains="true">googleapis.com</domain>
+        <domain includeSubdomains="true">firebase.googleapis.com</domain>
+        <domain includeSubdomains="true">fcm.googleapis.com</domain>
+        
+        <!-- WashMoose Backend (when you deploy) -->
+        <domain includeSubdomains="true">washmoose.app</domain>
+        <domain includeSubdomains="true">api.washmoose.app</domain>
+        
+        <!-- Google Services -->
+        <domain includeSubdomains="true">google.com</domain>
+        <domain includeSubdomains="true">gstatic.com</domain>
+        
+        <!-- ✅ Strong TLS Configuration -->
+        <trust-anchors>
+            <certificates src="system"/>
+        </trust-anchors>
+    </domain-config>
+    
+    <!-- ✅ DEVELOPMENT/DEBUG CONFIGURATION (SIMPLIFIED) -->
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="system"/>
+        </trust-anchors>
+    </debug-overrides>
+    
+    <!-- ✅ BASE CONFIGURATION (most restrictive) -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system"/>
+        </trust-anchors>
+    </base-config>
+    
+</network-security-config>

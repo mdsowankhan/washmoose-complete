@@ -1,0 +1,70 @@
+plugins {
+    id("com.android.application")
+    id("kotlin-android")
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id("dev.flutter.flutter-gradle-plugin")
+}
+
+android {
+    namespace = "com.washmoose.app"
+    compileSdk = 35
+
+    ndkVersion = "27.0.12077973"
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+
+    defaultConfig {
+        applicationId = "com.washmoose.app"
+        minSdk = 23
+        targetSdk = 35
+        versionCode = 1
+        versionName = "1.0.0"
+
+        ndk {
+            debugSymbolLevel = "NONE"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.getByName("debug")
+            isMinifyEnabled = false
+            isShrinkResources = false
+            isDebuggable = false
+            ndk {
+                debugSymbolLevel = "NONE"
+            }
+        }
+    }
+
+    // --- FIX: Disable stripping for all .so files here ---
+    packagingOptions {
+        doNotStrip("**/armeabi-v7a/*.so")
+        doNotStrip("**/arm64-v8a/*.so")
+        doNotStrip("**/x86/*.so")
+        doNotStrip("**/x86_64/*.so")
+        doNotStrip("**/*.so")
+        pickFirst("**/libc++_shared.so")
+        pickFirst("**/libjsc.so")
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+apply(plugin = "com.google.gms.google-services")
+
+// Disable problematic stripReleaseDebugSymbols tasks (fixes .aab build error on Windows)
+tasks.whenTaskAdded {
+    if (name.contains("stripReleaseDebugSymbols")) {
+        enabled = false
+    }
+}

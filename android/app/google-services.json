@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "766087143252",
+    "project_id": "washmoose-app",
+    "storage_bucket": "washmoose-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766087143252:android:c407aa9ba0fa3f3cc472c1",
+        "android_client_info": {
+          "package_name": "com.example.washmoose_clean"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5lho_Xwe2YZKcCZLCyquFsXRZBQfFH8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766087143252:android:0f44ae7fc878166bc472c1",
+        "android_client_info": {
+          "package_name": "com.example.washmoose_v2test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5lho_Xwe2YZKcCZLCyquFsXRZBQfFH8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766087143252:android:6c9b400e0607e70ac472c1",
+        "android_client_info": {
+          "package_name": "com.washmoose.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5lho_Xwe2YZKcCZLCyquFsXRZBQfFH8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
